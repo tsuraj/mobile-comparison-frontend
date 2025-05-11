@@ -21,6 +21,7 @@ const Compare = () => {
     if (mobile1 && mobile2) {
       const fetchComparison = async () => {
         try {
+          
           const data = await compareMobiles(mobile1.id, mobile2.id);
           setComparison(data);
         } catch (error) {

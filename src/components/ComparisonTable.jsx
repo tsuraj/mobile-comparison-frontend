@@ -1,4 +1,15 @@
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Card, CardMedia} from '@mui/material';
+import { 
+  Table, 
+  TableBody, 
+  TableCell, 
+  TableContainer, 
+  TableHead, 
+  TableRow, 
+  Paper, 
+  Card, 
+  CardMedia,
+  Typography 
+} from '@mui/material';
 
 const ComparisonTable = ({ mobile1, mobile2 }) => {
   const specs = [
@@ -23,24 +34,41 @@ const ComparisonTable = ({ mobile1, mobile2 }) => {
         <TableHead>
           <TableRow>
             <TableCell>Specification</TableCell>
-            <TableCell>{mobile1.brand} {mobile1.model} <Card>
-              <CardMedia
-                component="img"
-                height="200"
-                image={mobile1.image_url || 'https://via.placeholder.com/500'}
-                alt={mobile1.model}
-              />
-          </Card></TableCell>
-            <TableCell>{mobile2.brand} {mobile2.model}
-            <Card>
-            <CardMedia
-              component="img"
-              height="200"
-              image={mobile2.image_url || 'https://via.placeholder.com/500'}
-              alt={mobile2.model}
-            />
-          </Card>
-
+            <TableCell align="center">
+              <Card sx={{ maxWidth: 120, mx: 'auto', boxShadow: 'none' }}>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    height: 100,
+                    width: '100%',
+                    objectFit: 'contain',
+                    p: 1
+                  }}
+                  image={mobile1.image_url || 'https://via.placeholder.com/100'}
+                  alt={mobile1.model}
+                />
+              </Card>
+              <Typography variant="subtitle1" align="center">
+                {mobile1.brand} {mobile1.model}
+              </Typography>
+            </TableCell>
+            <TableCell align="center">
+              <Card sx={{ maxWidth: 120, mx: 'auto', boxShadow: 'none' }}>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    height: 100,
+                    width: '100%',
+                    objectFit: 'contain',
+                    p: 1
+                  }}
+                  image={mobile2.image_url || 'https://via.placeholder.com/100'}
+                  alt={mobile2.model}
+                />
+              </Card>
+              <Typography variant="subtitle1" align="center">
+                {mobile2.brand} {mobile2.model}
+              </Typography>
             </TableCell>
           </TableRow>
         </TableHead>

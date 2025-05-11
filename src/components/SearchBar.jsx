@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { TextField, Autocomplete, Box } from '@mui/material';
 import { searchMobiles } from '../services/api';
+import { Link } from 'react-router-dom';
+
 
 const SearchBar = ({ onSelect }) => {
   const [options, setOptions] = useState([]);
@@ -32,12 +34,14 @@ const SearchBar = ({ onSelect }) => {
         renderInput={(params) => (
           <TextField
             {...params}
+
             label="Search for mobiles"
             variant="outlined"
             fullWidth
           />
         )}
       />
+      
     </Box>
   );
 };

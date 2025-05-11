@@ -12,6 +12,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
 
 
@@ -107,4 +111,11 @@ footer ul li {
 
 footer .MuiSvgIcon-root {
   font-size: 1.5rem;
+}
+
+
+brand {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
